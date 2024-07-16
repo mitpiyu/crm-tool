@@ -23,7 +23,7 @@ public class Meal {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private UUID mealId;
+	private Long mealId;
 	private String type;
 	@Temporal(TemporalType.DATE)
 	private Date date;
@@ -32,6 +32,8 @@ public class Meal {
 	private String dietaryRestrictions;
 
 	@ManyToOne
+
 	@JoinColumn(name = "tour_id")
 	private Tour tour;
+
 }

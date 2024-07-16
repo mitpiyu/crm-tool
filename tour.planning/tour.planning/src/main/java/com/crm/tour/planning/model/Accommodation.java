@@ -21,18 +21,20 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class Accommodation {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private UUID accommodationId;
-    private String name;
-    private String address;
-    @Temporal(TemporalType.DATE)
-    private Date checkInDate;
-    @Temporal(TemporalType.DATE)
-    private Date checkOutDate;
-    private String roomType;
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private Long accommodationId;
+	private String name;
+	private String address;
+	@Temporal(TemporalType.DATE)
+	private Date checkInDate;
+	@Temporal(TemporalType.DATE)
+	private Date checkOutDate;
+	private String roomType;
 
-    @ManyToOne
-    @JoinColumn(name = "tour_id")
-    private Tour tour;
+	@ManyToOne
+
+	@JoinColumn(name = "tour_id")
+	private Tour tour;
+
 }

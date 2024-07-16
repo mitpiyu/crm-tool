@@ -17,7 +17,7 @@ import lombok.NoArgsConstructor;
 public class Itinerary {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private String itineraryId;
+	private Long itineraryId;
 	private int day;
 	private String activity;
 	private String location;
@@ -25,6 +25,7 @@ public class Itinerary {
 	private String endTime;
 
 	@ManyToOne
+
 	@JoinColumn(name = "tour_id")
 	private Tour tour;
 

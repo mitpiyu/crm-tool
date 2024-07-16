@@ -6,8 +6,6 @@ import java.util.UUID;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.PrePersist;
@@ -24,7 +22,7 @@ import lombok.NoArgsConstructor;
 public class Tour {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	// @GeneratedValue(strategy = GenerationType.AUTO)
 	private String tourId;
 	private String tourName;
 	private String description;
@@ -56,5 +54,12 @@ public class Tour {
 		if (tourId == null) {
 			tourId = "raj" + UUID.randomUUID();
 		}
+	}
+
+	@Override
+	public String toString() {
+		return "Tour [tourId=" + tourId + ", tourName=" + tourName + ", description=" + description + ", startDate="
+				+ startDate + ", endDate=" + endDate + ", price=" + price + ", destination=" + destination
+				+ ", tourType=" + tourType + "]";
 	}
 }

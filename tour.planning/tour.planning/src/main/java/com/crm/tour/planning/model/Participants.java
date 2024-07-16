@@ -17,7 +17,7 @@ import lombok.NoArgsConstructor;
 public class Participants {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private String participantId;
+	private Long participantId;
 	private String name;
 	private String email;
 	private String phone;
@@ -25,6 +25,7 @@ public class Participants {
 	private String preferences;
 
 	@ManyToOne
+
 	@JoinColumn(name = "tour_id")
 	private Tour tour;
 

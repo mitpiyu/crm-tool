@@ -22,7 +22,7 @@ public class Transportation {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private String transportId;
+	private Long transportId;
 	private String type;
 	private String departure;
 	private String arrival;
@@ -32,6 +32,8 @@ public class Transportation {
 	private Date arrivalTime;
 
 	@ManyToOne
+
 	@JoinColumn(name = "tour_id")
 	private Tour tour;
+
 }
